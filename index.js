@@ -1,5 +1,6 @@
 'use strict';
 
+const Amount = require('./lib/amount');
 const Angle = require('./lib/angle');
 const Duration = require('./lib/duration');
 const Energy = require('./lib/energy');
@@ -13,6 +14,6 @@ const Temperature = require('./lib/temperature');
 const Volume = require('./lib/volume');
 
 module.exports = {
-	Angle, Duration, Energy, Illuminance, Length, Mass, Power, Pressure, Speed,
-	Temperature, Volume
+	Amount, Angle, Duration, Energy, Illuminance, Length, Mass, Power,
+	Pressure, Speed, Temperature, Volume
 };
