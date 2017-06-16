@@ -1,19 +1,20 @@
 'use strict';
 
-const Amount = require('./lib/amount');
-const Angle = require('./lib/angle');
-const Duration = require('./lib/duration');
-const Energy = require('./lib/energy');
-const Illuminance = require('./lib/illuminance');
-const Length = require('./lib/length');
-const Mass = require('./lib/mass');
-const Power = require('./lib/power');
-const Pressure = require('./lib/pressure');
-const Speed = require('./lib/speed');
-const Temperature = require('./lib/temperature');
-const Volume = require('./lib/volume');
+const amount = require('./lib/amount');
+const angle = require('./lib/angle');
+const duration = require('./lib/duration');
+const energy = require('./lib/energy');
+const illuminance = require('./lib/illuminance');
+const length = require('./lib/length');
+const mass = require('./lib/mass');
+const power = require('./lib/power');
+const pressure = require('./lib/pressure');
+const speed = require('./lib/speed');
+const temperature = require('./lib/temperature');
+const volume = require('./lib/volume');
 
 module.exports = {
-	Amount, Angle, Duration, Energy, Illuminance, Length, Mass, Power,
-	Pressure, Speed, Temperature, Volume
+	amount, generic: amount,
+	angle, duration, energy, illuminance, length, mass, power, pressure, speed,
+	temperature, volume
 };
