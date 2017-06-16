@@ -79,7 +79,7 @@ console.log(generic('20 micro'))
 
 Units in the SI system can be combined with SI-prefixes to create a new unit.
 SI-prefixes are supported both by their short names and their long names.
-Examples: `cm`, `milliliters`, 'hPa', 'MW', 'kilowatt'
+Examples: `cm`, `milliliters`, `hPa`, `MW`, `kilowatt`
 
 Long Name      | Short name     | Factor
 ---------------|----------------|---------------------

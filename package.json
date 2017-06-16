@@ -1,6 +1,6 @@
 {
   "name": "amounts",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Measurements and unit conversions",
   "license": "MIT",
   "repository": "aholstenson/amounts",
