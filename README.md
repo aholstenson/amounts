@@ -203,13 +203,16 @@ Watt hours   | True | `Wh`, `wh`, `watt hour`, `watt hours`
 ```javascript
 const { illuminance } = require('amounts');
 
-console.log(illuminance(2, 'lux'));
+console.log(illuminance(2, 'lx'));
 console.log(angle('8000 lux'));
 ```
 
 Unit         | SI   | Names
 -------------|------|--------------------
-Lux          | No   | `lux`
+Lux          | Yes  | `lx`, `lux`
+Phot         | No   | `ph`, `phot`
+Nox          | No   | `nx`, `nox`
+Foot-candle  | No   | `fc`, `lm/ft²`, `ft-c`, `foot-candle`, `foot-candles`, `foot candle`, `foot candles`
 
 
 ## Length
