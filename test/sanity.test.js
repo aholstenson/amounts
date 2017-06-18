@@ -88,6 +88,11 @@ describe('Sanity check', function() {
 		expect(value.as('m')).to.equal(1);
 	});
 
+	it('Parse with unknown SI-prefix', function() {
+		expect(() => length('100 mum')).to.throw();
+		expect(() => length('100 megagigameter')).to.throw();
+	});
+
 	it('Parse unknown', function() {
 		expect(() => length('3 thingies')).to.throw(/Unsupported/);
 		expect(() => length('3 cookiemeters')).to.throw(/Unsupported/);
