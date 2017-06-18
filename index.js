@@ -2,6 +2,7 @@
 
 const amount = require('./lib/amount');
 const angle = require('./lib/angle');
+const area = require('./lib/area');
 const duration = require('./lib/duration');
 const energy = require('./lib/energy');
 const illuminance = require('./lib/illuminance');
@@ -15,6 +16,6 @@ const volume = require('./lib/volume');
 
 module.exports = {
 	amount, generic: amount,
-	angle, duration, energy, illuminance, length, mass, power, pressure, speed,
-	temperature, volume
+	area, angle, duration, energy, illuminance, length, mass, power, pressure,
+	speed, temperature, volume
 };
