@@ -278,10 +278,11 @@ console.log(power('7 bar').kPa);
 Unit         | SI   | Names
 -------------|------|--------------------
 Pascal       | Yes  | `pa`, `Pa`, `pascal`, `pascals`
-Atmosphere   | No   | `atm`, `atmosphere`, `athmospheres`
+Atmosphere   | No   | `atm`, `atmosphere`, `atmospheres`
 Bar          | No   | `bar`, `bars`
 PSI          | No   | `psi`, `pounds per square inch`, `pound per square inch`
 Torr         | No   | `torr`
+mmHg         | No   | `mmHg`, 'millimetre of mercury', `millimetres of mercury`, `millimeter of mercury`, `millimetres of mercury`
 
 ## Speed
 
