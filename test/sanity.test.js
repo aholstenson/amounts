@@ -2,6 +2,7 @@
 const { expect } = require('chai');
 const length = require('../lib/length');
 const area = require('../lib/area');
+const mass = require('../lib/mass');
 
 describe('Sanity check', function() {
 	it('Can create length', function() {
@@ -134,5 +135,17 @@ describe('Sanity check', function() {
 		expect(length('2 Mm').as('m')).to.equal(2000000);
 		expect(area('2 mm2').as('m2')).to.equal(0.000002);
 		expect(area('2 Mm2').as('m2')).to.equal(2000000000000);
+	});
+
+	it('Factory can list units', function() {
+		expect(length.units.length).to.be.above(0);
+	});
+
+	it('Factory supports fetching unit', function()  {
+		const g = mass.unit('g');
+		expect(g.convert('2 kg')).to.equal(2000);
+		expect(g.convert(2)).to.equal(2);
+		expect(g.convert(2, 'kg')).to.equal(2000);
+		expect(g.convert('2.0', 'kg')).to.equal(2000);
 	});
 });

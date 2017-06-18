@@ -40,6 +40,15 @@ But this will not work:
 mass('750 uG');
 ```
 
+Or fetch units from factories and use `convert`:
+
+```javascript
+// To convert to mmHg
+pressure.unit('mmHg').convert('200.12 kPa');
+// Or back to kPa
+pressure.unit('kPa').convert(1501.023, 'mmHg');
+```
+
 ## API
 
 All amounts that can be represented share a common API. Factories support:
@@ -55,6 +64,10 @@ All amounts that can be represented share a common API. Factories support:
 * `factory(value)`
 
     Create an amount with the given value and the default unit.
+
+* `factory.unit(unit)`
+
+    Get a unit that can be used for conversions for this factory.
 
 Instances have the following API:
 
