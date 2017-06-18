@@ -1,6 +1,6 @@
 {
   "name": "amounts",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Measurements and unit conversions.  Supports angle, area, duration, energy, illuminance, length, mass, power, pressure, speed, temperature, volume and generic amounts.",
   "license": "MIT",
   "repository": "aholstenson/amounts",
