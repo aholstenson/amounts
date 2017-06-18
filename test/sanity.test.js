@@ -1,6 +1,7 @@
 
 const { expect } = require('chai');
 const length = require('../lib/length');
+const area = require('../lib/area');
 
 describe('Sanity check', function() {
 	it('Can create length', function() {
@@ -93,5 +94,28 @@ describe('Sanity check', function() {
 		expect(() => length('3 im')).to.throw(/Unsupported/);
 		expect(() => length('3 megafeet')).to.throw(/support prefixes/);
 		expect(() => length('3 Mft')).to.throw(/support prefix/);
+	});
+
+	it('Parse units case insensitive', function() {
+		const value = length('2 Meters');
+		expect(value.unit).to.equal('m');
+		expect(value.value).to.equal(2);
+	});
+
+	it('Parse units with spaces', function() {
+		const value = area('2 sq in');
+		expect(value.unit).to.equal('sq in');
+		expect(value.value).to.equal(2);
+	});
+
+	it('Parse units with spaces case insensitive', function() {
+		const value = area('2 Square metre');
+		expect(value.unit).to.equal('m²');
+		expect(value.value).to.equal(2);
+	});
+
+	it('Units with spaces get proper getters', function() {
+		const value = area('2 m2');
+		expect(() => value.squareInches).to.not.throw();
 	});
 });
