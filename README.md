@@ -7,12 +7,36 @@ and generic amounts.
 ```javascript
 const { length, duration } = require('amounts');
 
+// Supports parsing from strings:
 const value = length('30 m');
+// Convert into another unit (returns a number)
 console.log(length.as('ft'));
 
-console.log(length('98 ft').as('cm'));
-
+// Parse durations
 console.log(duration('20 m, 4 s'));
+
+// Supports precision on the numbers
+length('2.8 cm')
+length('2e10 m')
+```
+
+Amounts tries to be friendly with handling input, supporting variations of
+units, such as both short and long names, with longer unit names being
+case insensitive.
+
+These will all parse to the same unit and value:
+
+```javascript
+mass('750 ug');
+mass('750 micrograms');
+mass('750 micro gram');
+mass('750 MikroGram')
+```
+
+But this will not work:
+
+```javascript
+mass('750 uG');
 ```
 
 ## API
@@ -81,28 +105,28 @@ Units in the SI system can be combined with SI-prefixes to create a new unit.
 SI-prefixes are supported both by their short names and their long names.
 Examples: `cm`, `milliliters`, `hPa`, `MW`, `kilowatt`
 
-Long Name      | Short name     | Factor
----------------|----------------|---------------------
-`yocto`        | `y`            | 10<sup>-24</sup>
-`zepto`        | `z`            | 10<sup>-21</sup>
-`atto`         | `a`            | 10<sup>-18</sup>
-`femto`        | `f`            | 10<sup>-15</sup>
-`pico`         | `p`            | 10<sup>-12</sup>
-`nano`         | `n`            | 10<sup>-9</sup>
-`micro`        | `u`, `mc`, `µ` | 10<sup>-6</sup>
-`milli`        | `m`            | 10<sup>-3</sup>
-`centi`        | `c`            | 10<sup>-2</sup>
-`deci`         | `d`            | 10<sup>-1</sup>
-`deca`, `deka` | `da`           | 10<sup>1</sup>
-`hecto`        | `h`            | 10<sup>2</sup>
-`kilo`         | `k`            | 10<sup>3</sup>
-`mega`         | `M`            | 10<sup>6</sup>
-`giga`         | `G`            | 10<sup>9</sup>
-`tera`         | `T`            | 10<sup>12</sup>
-`peta`         | `P`            | 10<sup>15</sup>
-`exa`          | `E`            | 10<sup>18</sup>
-`zetta`        | `Z`            | 10<sup>21</sup>
-`yotta`        | `Y`            | 10<sup>24</sup>
+Long Name      | Short name     | Factor              | Factor (expanded)
+---------------|----------------|---------------------|-------------------
+`yocto`        | `y`            | 10<sup>-24</sup>    | 0.000 000 000 000 000 000 000 001
+`zepto`        | `z`            | 10<sup>-21</sup>    | 0.000 000 000 000 000 000 001
+`atto`         | `a`            | 10<sup>-18</sup>    | 0.000 000 000 000 000 001
+`femto`        | `f`            | 10<sup>-15</sup>    | 0.000 000 000 000 001
+`pico`         | `p`            | 10<sup>-12</sup>    | 0.000 000 000 001
+`nano`         | `n`            | 10<sup>-9</sup>     | 0.000 000 001
+`micro`        | `u`, `mc`, `µ` | 10<sup>-6</sup>     | 0.000 001
+`milli`        | `m`            | 10<sup>-3</sup>     | 0.001
+`centi`        | `c`            | 10<sup>-2</sup>     | 0.01
+`deci`         | `d`            | 10<sup>-1</sup>     | 0.1
+`deca`, `deka` | `da`           | 10<sup>1</sup>      | 10
+`hecto`        | `h`            | 10<sup>2</sup>      | 100
+`kilo`         | `k`            | 10<sup>3</sup>      | 1 000
+`mega`         | `M`            | 10<sup>6</sup>      | 1 000 000
+`giga`         | `G`            | 10<sup>9</sup>      | 1 000 000 000
+`tera`         | `T`            | 10<sup>12</sup>     | 1 000 000 000 000
+`peta`         | `P`            | 10<sup>15</sup>     | 1 000 000 000 000 000
+`exa`          | `E`            | 10<sup>18</sup>     | 1 000 000 000 000 000 000
+`zetta`        | `Z`            | 10<sup>21</sup>     | 1 000 000 000 000 000 000 000
+`yotta`        | `Y`            | 10<sup>24</sup>     | 1 000 000 000 000 000 000 000 000
 
 ## Angle
 
@@ -134,8 +158,8 @@ Square Inch  | No   | `sq in`, `square inch`, `square inches`
 Square Foot  | No   | `sq ft`, `square foot`, `square feet`
 Square Yard  | No   | `sq yd`, `square yard`, `square yards`
 Square Mile  | No   | `sq mi`, `square mile`, `square miles`
-Hectare      | No   | `ha`, `hectare`
-Acre         | No   | `acre`
+Hectare      | No   | `ha`, `hectare`, `hectares`
+Acre         | No   | `acre`, `acres`
 
 ## Duration
 
@@ -202,7 +226,7 @@ Unit         | SI   | Names
 Metre        | Yes  | `m`, `meter`, `meters`, `metre`, `metres`
 Inch         | No   | `in`, `inch`, `inches`
 Feet         | No   | `ft`, `foot`, `feet`
-Yard         | No   | `yd, `yard`, `yards`
+Yard         | No   | `yd`, `yard`, `yards`
 Mile         | No   | `mi`, `mile`, `miles`
 
 ## Mass
