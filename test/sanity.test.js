@@ -123,4 +123,16 @@ describe('Sanity check', function() {
 		const value = area('2 m2');
 		expect(() => value.squareInches).to.not.throw();
 	});
+
+	it('Parse units with SI-prefix case sensitive', function() {
+		expect(length('2 mm').unit).to.equal('mm');
+		expect(length('2 Mm').unit).to.equal('Mm');
+		expect(area('2 mm2').unit).to.equal('mm²');
+		expect(area('2 Mm2').unit).to.equal('Mm²');
+
+		expect(length('2 mm').as('m')).to.equal(0.002);
+		expect(length('2 Mm').as('m')).to.equal(2000000);
+		expect(area('2 mm2').as('m2')).to.equal(0.000002);
+		expect(area('2 Mm2').as('m2')).to.equal(2000000000000);
+	});
 });
