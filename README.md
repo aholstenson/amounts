@@ -1,6 +1,6 @@
 # Amounts
 
-Measurements and unit conversions for JavaScript. Supports angle, duration,
+Measurements and unit conversions for JavaScript. Supports angle, area, duration,
 energy, illuminance, length, mass, power, pressure, speed, temperature, volume
 and generic amounts.
 
@@ -117,6 +117,25 @@ Unit         | SI   | Names
 -------------|------|--------------------
 Degree       | No   | `deg`, `degree`, `degrees`
 Radian       | Yes  | `rad`, `radian`, `radians`
+
+## Area
+
+```javascript
+const { area } = require('amounts');
+
+console.log(area(2, 'm^2'));
+console.log(area('10 sq ft').as('m2'));
+```
+
+Unit         | SI   | Names
+-------------|------|--------------------
+Square Meter | Yes  | `m²`, `m^2`, `m2`, `square metre`, `square metres`, `square meter`, `square meters`
+Square Inch  | No   | `sq in`, `square inch`, `square inches`
+Square Foot  | No   | `sq ft`, `square foot`, `square feet`
+Square Yard  | No   | `sq yd`, `square yard`, `square yards`
+Square Mile  | No   | `sq mi`, `square mile`, `square miles`
+Hectare      | No   | `ha`, `hectare`
+Acre         | No   | `acre`
 
 ## Duration
 
@@ -260,7 +279,7 @@ Knot           | No   | `kt`, `knot`, `knots`
 const { temperature } = require('amounts');
 
 console.log(temperature(22)); // Celsius
-console.log(temperature('200 k').celsius);
+console.log(temperature('200 K').celsius);
 console.log(temperature(80, 'f').kelvin);
 ```
 
