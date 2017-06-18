@@ -11,6 +11,7 @@ const { length, duration } = require('amounts');
 const value = length('30 m');
 // Convert into another unit (returns a number)
 console.log(length.as('ft'));
+console.log(length.feet);
 
 // Parse durations
 console.log(duration('20 m, 4 s'));
@@ -195,7 +196,7 @@ console.log(energy('3.5 kJ').kWh);
 Unit         | SI   | Names
 -------------|------|--------------------
 Joules       | Yes  | `J`, `j`, `joule`, `joules`
-Watt hours   | True | `Wh`, `wh`, `wattHour`, `wattHours`
+Watt hours   | True | `Wh`, `wh`, `watt hour`, `watt hours`
 
 ## Illuminance
 
@@ -273,10 +274,10 @@ console.log(power('7 bar').kPa);
 
 Unit         | SI   | Names
 -------------|------|--------------------
-Pascal       | Yes  | `pa`, `Pa`, `pascal`
+Pascal       | Yes  | `pa`, `Pa`, `pascal`, `pascals`
 Atmosphere   | No   | `atm`, `atmosphere`, `athmospheres`
-Bar          | No   | `bar`
-PSI          | No   | `psi`, `poundsPerSquareInch`
+Bar          | No   | `bar`, `bars`
+PSI          | No   | `psi`, `pounds per square inch`, `pound per square inch`
 Torr         | No   | `torr`
 
 ## Speed
@@ -291,10 +292,10 @@ console.log(speed('10 mph').mps);
 
 Unit           | SI   | Names
 ---------------|------|--------------------
-Metres/Second  | Yes  | `m/s`, `mps`, `metersPerSecond`, `metresPerSecond`, `metres/second`, `meters/second`
-Kilometre/Hour | No   | `km/h`, `kph`, `kilometersPerHour`, `kilometresPerHour`, `kilometers/hour`, `kilometre/hour`
-Miles/Hour     | No   | `mph`, `milesPerHour`, `miles/hour`
-Feet/Second    | No   | `ft/s`, `fps`, `footPerSecond`, `feetPerSecond`, `foot/second`, `feet/second`
+Metres/Second  | Yes  | `m/s`, `mps`, `metre per second`, `metres per second`, `meter per second`, `meters per second`, `metre/second`, `metres/second`, `meter/second`, `meters/second`
+Kilometre/Hour | No   | `km/h`, `kph`, `kilometre per hour`, `kilometres per hour`, `kilometer per hour` `kilometers per hour`, `kilometers/hour`, `kilometre/hour`
+Miles/Hour     | No   | `mph`, `mile per hour`, `miles per hour`, `mile/hour`, `miles/hour`
+Feet/Second    | No   | `ft/s`, `fps`, `foot per second`, `feet per second`, `foot/second`, `feet/second`
 Knot           | No   | `kt`, `knot`, `knots`
 
 ## Temperature
@@ -330,6 +331,6 @@ Gallon       | No   | `gal`, `gallon`, `gallons`
 Quart        | No   | `qt`, `quart`, `quarts`
 Pint         | No   | `pt`, `pint`, `pints`
 Cup          | No   | `cu`, `cup`, `cups`
-Fluid ounce  | No   | `floz`, `oz`, `fluid-ounce`, `ounce`, `fluid-ounces`, `ounces`
+Fluid ounce  | No   | `floz`, `oz`, `fluid ounce`, `ounce`, `fluid ounces`, `ounces`
 Tablespoon   | No   | `tb`, `tbsp`, `tbs`, `tablesppon`, `tablespoons`
 Teaspoon     | No   | `tsp`, `teaspoon`, `teaspoons`
