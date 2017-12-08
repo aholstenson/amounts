@@ -1,7 +1,7 @@
 {
   "name": "amounts",
   "version": "0.4.0",
-  "description": "Measurements and unit conversions.  Supports angle, area, duration, energy, illuminance, length, mass, power, pressure, speed, temperature, volume and generic amounts.",
+  "description": "Represent amounts of stuff with units and conversions",
   "license": "MIT",
   "repository": "aholstenson/amounts",
   "scripts": {
@@ -11,7 +11,20 @@
   "main": "index.js",
   "keywords": [
     "measurements",
-    "quantities"
+    "quantities",
+    "quantity",
+    "angle",
+    "area",
+    "duration",
+    "energy",
+    "illuminance",
+    "length",
+    "mass",
+    "power",
+    "pressure",
+    "speed",
+    "temperature",
+    "volume"
   ],
   "devDependencies": {
     "chai": "^4.0.1",
