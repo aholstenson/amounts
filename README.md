@@ -1,8 +1,7 @@
 # Amounts
 
-Measurements and unit conversions for JavaScript. Supports angle, area, duration,
-energy, illuminance, length, mass, power, pressure, speed, temperature, volume
-and generic amounts.
+Represent amounts of stuff with units and conversions. Supports lenient
+parsing of amounts, normalization and basic formatting.
 
 ```javascript
 const { length, duration } = require('amounts');
@@ -297,6 +296,19 @@ PSI          | No   | `psi`, `pounds per square inch`, `pound per square inch`
 Torr         | No   | `torr`
 mmHg         | No   | `mmHg`, 'millimetre of mercury', `millimetres of mercury`, `millimeter of mercury`, `millimetres of mercury`
 
+## Sound Pressure Level
+
+```javascript
+const { soundPressureLevel } = require('amounts');
+
+console.log(soundPressureLevel(30)); // db
+console.log(soundPressureLevel(30, 'dB')); // db
+```
+
+Unit         | SI   | Names
+-------------|------|--------------------
+Decibels     | No   | `dB`, `db`, `dbs`, `decibel`, `decibels`
+
 ## Speed
 
 ```javascript
@@ -330,6 +342,20 @@ Unit         | SI   | Names
 Celsius      | No   | `C`, `c`, `celsius`
 Kelvin       | Yes  | `K`, `kelvin`, `kelvins`
 Fahrenheit   | No   | `F`, `f`, `fahrenheit`, `fahrenheits`
+
+## Voltage
+
+```javascript
+const { voltage } = require('amounts');
+
+console.log(voltage(22)); // Volts
+console.log(voltage('200 V').volts);
+```
+
+Unit         | SI   | Names
+-------------|------|--------------------
+Volt         | Yes  | `V`, `v`, `volt`, `volts`
+
 
 ## Volume
 
